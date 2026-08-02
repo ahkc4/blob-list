@@ -104,9 +104,10 @@ async function validateEntitySemantics(entity, chainlist, errors) {
     assertKnownChain(ref.caip2, chainlist, errors, entity.__file);
   }
 
-  if (entity.icon?.mode === "chainlist") {
+  if (entity.icon?.chain_ref) {
     assertKnownChain(entity.icon.chain_ref, chainlist, errors, entity.__file);
-  } else if (entity.icon?.mode === "local") {
+  }
+  if (entity.icon?.local) {
     await validateLocalIcon(entity, errors);
   }
 
@@ -165,24 +166,33 @@ async function validateEntitySemantics(entity, chainlist, errors) {
 }
 
 async function validateLocalIcon(entity, errors) {
-  const iconPath = path.join(rootDir, entity.icon.source);
+  const iconSource = entity.icon.local.source;
+  const iconPath = path.join(rootDir, iconSource);
   try {
     const stat = await fs.stat(iconPath);
     if (stat.size > 100 * 1024) {
-      errors.push(`${entity.icon.source} exceeds the 100 KiB local icon limit`);
+      errors.push(`${iconSource} exceeds the 100 KiB local icon limit`);
     }
     const source = await fs.readFile(iconPath, "utf8");
     if (!source.trimStart().startsWith("<svg")) {
-      errors.push(`${entity.icon.source} must be an SVG file`);
+      errors.push(`${iconSource} must be an SVG file`);
     }
-    if (/<script\b|<image\b|https?:\/\/|data:/iu.test(source)) {
+    // xmlns namespace declarations legitimately contain http:// URLs, so
+    // scrub them before scanning for remote references.
+    const scrubbed = source.replace(
+      /\bxmlns(?::[A-Za-z0-9]+)?\s*=\s*("[^"]*"|'[^']*')/giu,
+      "xmlns=''",
+    );
+    if (
+      /<script\b|<image\b|<foreignObject\b|https?:\/\/|data:/iu.test(scrubbed)
+    ) {
       errors.push(
-        `${entity.icon.source} must not contain scripts, raster embeds, data URLs, or remote refs`,
+        `${iconSource} must not contain scripts, raster embeds, foreign objects, data URLs, or remote refs`,
       );
     }
   } catch {
     errors.push(
-      `${relative(entity.__file)}: local icon ${entity.icon.source} is missing`,
+      `${relative(entity.__file)}: local icon ${iconSource} is missing`,
     );
   }
 }

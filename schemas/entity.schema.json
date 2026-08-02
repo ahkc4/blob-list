@@ -74,28 +74,25 @@
       "uniqueItems": true
     },
     "icon": {
-      "oneOf": [
+      "type": "object",
+      "additionalProperties": false,
+      "anyOf": [
         {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["mode", "chain_ref"],
-          "properties": {
-            "mode": {
-              "const": "chainlist"
-            },
-            "chain_ref": {
-              "$ref": "#/$defs/caip2"
-            }
-          }
+          "required": ["chain_ref"]
         },
         {
+          "required": ["local"]
+        }
+      ],
+      "properties": {
+        "chain_ref": {
+          "$ref": "#/$defs/caip2"
+        },
+        "local": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["mode", "source", "license", "source_url"],
+          "required": ["source", "license", "source_url"],
           "properties": {
-            "mode": {
-              "const": "local"
-            },
             "source": {
               "type": "string",
               "pattern": "^icons/local/[A-Za-z0-9._/-]+\\.svg$"
@@ -110,7 +107,7 @@
             }
           }
         }
-      ]
+      }
     },
     "addresses": {
       "type": "array",

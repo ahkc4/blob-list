@@ -11,8 +11,11 @@ chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
 icon:
-  mode: chainlist
   chain_ref: eip155-42161
+  local:
+    source: icons/local/arbitrum.svg
+    license: "Arbitrum brand asset (trademark of Offchain Labs / Arbitrum Foundation); redistributed unmodified for identification."
+    source_url: "https://raw.githubusercontent.com/OffchainLabs/arbitrum-docs/master/static/img/logo.svg"
 addresses:
   - submission_chain: eip155-1
     address: "0xC1b634853Cb333D3aD8663715b08f41A3Aec47cc"

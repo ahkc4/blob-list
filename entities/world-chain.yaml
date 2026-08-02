@@ -11,8 +11,11 @@ chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
 icon:
-  mode: chainlist
   chain_ref: eip155-480
+  local:
+    source: icons/local/world-chain.svg
+    license: "World brand asset (trademark of World Foundation / Tools for Humanity); mark extracted from the official logo lockup and normalized (white disc background) for standalone identification."
+    source_url: "https://world.org/icons/worldcoin-orb-world-logo.svg"
 addresses:
   - submission_chain: eip155-1
     address: "0xdBBE3D8c2d2b22A2611c5A94A9a12C2fCD49Eb29"

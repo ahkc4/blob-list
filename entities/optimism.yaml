@@ -11,8 +11,11 @@ chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
 icon:
-  mode: chainlist
   chain_ref: eip155-10
+  local:
+    source: icons/local/optimism.svg
+    license: "Optimism brand asset (trademark of the Optimism Foundation / OP Labs); redistributed unmodified for identification, from the official brand kit."
+    source_url: "https://optimism.io/brand"
 addresses:
   - submission_chain: eip155-1
     address: "0x6887246668a3b87F54DeB3b94Ba47a6f63F32985"

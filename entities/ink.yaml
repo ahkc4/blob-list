@@ -11,8 +11,11 @@ chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
 icon:
-  mode: chainlist
   chain_ref: eip155-57073
+  local:
+    source: icons/local/ink.svg
+    license: "Ink name and logo are trademarks of Payward, Inc. (Kraken) / the Ink project; sourced from the MIT-licensed inkonchain/ink-kit repository; redistributed unmodified for identification."
+    source_url: "https://raw.githubusercontent.com/inkonchain/ink-kit/main/src/icons/InkLogo.svg"
 addresses:
   - submission_chain: eip155-1
     address: "0x500d7Ea63CF2E501dadaA5feeC1FC19FE2Aa72Ac"

@@ -11,7 +11,6 @@ chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
 icon:
-  mode: chainlist
   chain_ref: eip155-167000
 addresses:
   - submission_chain: eip155-1

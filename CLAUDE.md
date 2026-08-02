@@ -5,7 +5,7 @@ This repository is a public, chainlist-aware registry of blob-submitting EVM add
 ## Core Rules
 
 - Do not add attribution claims without public evidence.
-- Do not invent chain metadata. Chain IDs, names, RPCs, explorers, currencies, icons, and related chain metadata belong to `ethereum-lists/chains`.
+- Do not invent chain metadata. Chain IDs, names, RPCs, explorers, currencies, icons, and related chain metadata belong to `ethereum-lists/chains`. The one exception is entity icons: a local SVG under `icons/local/` may serve as a fallback while Chainlist has no icon for the entity's chain; resolution automatically prefers the Chainlist icon once one exists upstream (see `icons/local/README.md`).
 - Keep one source YAML file per entity in `entities/`, with the filename matching the entity `id`.
 - Preserve history by closing ranges with `valid_to.block` instead of rewriting past claims.
 - Use `confidence: confirmed` only for strong evidence such as official docs, official announcements, verified contracts, official repositories, or equivalent public sources.

@@ -126,7 +126,7 @@ export function collectReferencedChains(entities) {
     for (const ref of entity.chain_refs ?? []) {
       refs.add(ref.caip2);
     }
-    if (entity.icon?.mode === "chainlist") {
+    if (entity.icon?.chain_ref) {
       refs.add(entity.icon.chain_ref);
     }
     for (const claim of entity.addresses ?? []) {
@@ -357,16 +357,29 @@ export function resolveIcon(icon, chainlist) {
   if (!icon) {
     return null;
   }
-  if (icon.mode === "local") {
-    return icon;
+
+  // Chainlist is authoritative whenever the referenced chain has an icon
+  // upstream; the local file only fills the gap until one appears there.
+  const chain = icon.chain_ref ? chainlist.chains[icon.chain_ref] : null;
+  const iconName = chain?.icon ?? null;
+  if (iconName) {
+    return {
+      chain_ref: icon.chain_ref,
+      chainlist_icon: iconName,
+      entries: chainlist.icons?.[iconName] ?? [],
+      mode: "chainlist",
+      source: "ethereum-lists/chains",
+    };
   }
 
-  const chain = chainlist.chains[icon.chain_ref];
-  const iconName = chain?.icon ?? null;
+  if (icon.local) {
+    return { mode: "local", ...icon.local };
+  }
+
   return {
     chain_ref: icon.chain_ref,
-    chainlist_icon: iconName,
-    entries: iconName ? (chainlist.icons?.[iconName] ?? []) : [],
+    chainlist_icon: null,
+    entries: [],
     mode: "chainlist",
     source: "ethereum-lists/chains",
   };
