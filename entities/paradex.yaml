@@ -8,6 +8,11 @@ website: "https://www.paradex.trade"
 chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
+icon:
+  local:
+    source: icons/local/paradex.svg
+    license: "Paradex brand asset (trademark of Paradex / tradeparadex); redistributed from the official media kit (XML prolog removed) for identification."
+    source_url: "https://paradex.trade/media-kit"
 addresses:
   - submission_chain: eip155-1
     address: "0xC70ae19B5FeAA5c19f576e621d2bad9771864fe2"

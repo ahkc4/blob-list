@@ -8,6 +8,11 @@ website: "https://lighter.xyz"
 chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
+icon:
+  local:
+    source: icons/local/lighter.svg
+    license: "Lighter brand asset (trademark of Lighter / Elliot Technologies); redistributed unmodified for identification."
+    source_url: "https://app.lighter.xyz/favicon.svg"
 addresses:
   - submission_chain: eip155-1
     address: "0x191fF0EC830F83916A427d169a234c33e48aA79f"

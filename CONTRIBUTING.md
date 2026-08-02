@@ -18,6 +18,13 @@ Thanks for helping make blob attribution less hand-wavy.
 - `valid_to: null` means the claim is currently open-ended.
 - The same `submission_chain + address + role` cannot map to two active, non-disputed entities over overlapping block ranges.
 
+## Icons
+
+- Give an entity an `icon` block when a usable mark exists; both fields are optional but at least one is required.
+- `chain_ref` points at the CAIP-2 chain whose Chainlist entry carries the icon. Resolution always prefers the Chainlist icon when the chain has one upstream in `ethereum-lists/chains`.
+- `local` supplies a fallback SVG under `icons/local/` (with `license` and `source_url`) for chains Chainlist has no icon for. It is used only until an upstream icon appears; see `icons/local/README.md` for the file rules.
+- Icons must render legibly standalone on both light and dark backgrounds; marks that rely on page CSS (for example `currentColor`) or on a specific page background are normalized before being committed.
+
 ## Local Checks
 
 ```sh

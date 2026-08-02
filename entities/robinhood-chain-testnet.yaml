@@ -8,6 +8,12 @@ website: "https://robinhood.com/chain"
 chain_refs:
   - caip2: eip155-11155111
     relationship: settlement_chain
+icon:
+  chain_ref: eip155-46630
+  local:
+    source: icons/local/robinhood-chain.svg
+    license: "Robinhood feather mark (trademark of Robinhood Markets, Inc.); extracted from the official Robinhood Chain page lockup and normalized (cropped to the mark, brand green on white disc) for standalone identification."
+    source_url: "https://robinhood.com/us/en/about/chain/"
 addresses:
   - submission_chain: eip155-11155111
     address: "0x6D77b3f2CFfFa24E474aFab0d09c1646e87A0A7b"

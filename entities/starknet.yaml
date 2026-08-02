@@ -8,6 +8,11 @@ website: "https://www.starknet.io"
 chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
+icon:
+  local:
+    source: icons/local/starknet.svg
+    license: "Starknet name and logo are trademarks of StarkWare Industries Ltd. / Starknet Foundation; redistributed unmodified from the official media kit for identification."
+    source_url: "https://www.starknet.io/assets/starknet-logos-svg.zip"
 addresses:
   - submission_chain: eip155-1
     address: "0x2C169DFe5fBbA12957Bdd0Ba47d9CEDbFE260CA7"

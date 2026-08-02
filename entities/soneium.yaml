@@ -11,8 +11,11 @@ chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
 icon:
-  mode: chainlist
   chain_ref: eip155-1868
+  local:
+    source: icons/local/soneium.svg
+    license: "Soneium brand asset (trademark of Sony Block Solutions Labs); redistributed unmodified for identification."
+    source_url: "https://docs.soneium.org/img/favicon.svg"
 addresses:
   - submission_chain: eip155-1
     address: "0x6776BE80dBAda6A02B5F2095cF13734ac303B8d1"

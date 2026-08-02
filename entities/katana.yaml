@@ -11,8 +11,11 @@ chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
 icon:
-  mode: chainlist
   chain_ref: eip155-747474
+  local:
+    source: icons/local/katana.svg
+    license: "Katana brand asset (trademark of the Katana project); mark extracted from the official homepage and normalized (squared canvas, dark disc background) for standalone identification."
+    source_url: "https://katana.network/"
 addresses:
   - submission_chain: eip155-1
     address: "0x1FFDA89C755f6D4Af069897D77CcAbb580Fd412a"

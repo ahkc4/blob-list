@@ -44,7 +44,14 @@
     "icon": {
       "type": ["object", "null"],
       "additionalProperties": true,
-      "required": ["mode"]
+      "anyOf": [
+        {
+          "required": ["chain_ref"]
+        },
+        {
+          "required": ["local"]
+        }
+      ]
     },
     "claim": {
       "type": "object",
