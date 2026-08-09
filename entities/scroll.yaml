@@ -6,6 +6,11 @@ status: active
 description: "Ethereum zkEVM rollup."
 website: "https://scroll.io"
 social:
+  - platform: farcaster
+    handle: "scrollzkp"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/scrollzkp"
   - platform: x
     handle: "Scroll_ZKP"
     evidence:

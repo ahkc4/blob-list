@@ -6,6 +6,11 @@ status: active
 description: "Ethereum zkEVM rollup."
 website: "https://zksync.io"
 social:
+  - platform: farcaster
+    handle: "zksync"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/zksync"
   - platform: x
     handle: "zksync"
     evidence:

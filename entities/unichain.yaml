@@ -6,6 +6,11 @@ status: active
 description: "OP Stack Ethereum L2 developed by Uniswap Labs."
 website: "https://unichain.org"
 social:
+  - platform: farcaster
+    handle: "unichain"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/unichain"
   - platform: x
     handle: "unichain"
     evidence:

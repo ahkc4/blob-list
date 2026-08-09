@@ -6,6 +6,11 @@ status: active
 description: "OP Stack Ethereum L2 for media and creator applications."
 website: "https://zora.energy"
 social:
+  - platform: farcaster
+    handle: "zora"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/zora"
   - platform: x
     handle: "zora"
     evidence:

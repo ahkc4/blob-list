@@ -6,6 +6,11 @@ status: active
 description: "OP Stack Ethereum L2 focused on DeFi applications."
 website: "https://mode.network"
 social:
+  - platform: farcaster
+    handle: "modenetwork"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/modenetwork"
   - platform: x
     handle: "modenetwork"
     evidence:

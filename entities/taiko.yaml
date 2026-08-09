@@ -6,6 +6,11 @@ status: active
 description: Ethereum-equivalent based rollup.
 website: https://taiko.xyz
 social:
+  - platform: farcaster
+    handle: "taikoxyz"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/taikoxyz"
   - platform: x
     handle: "taikoxyz"
     evidence:

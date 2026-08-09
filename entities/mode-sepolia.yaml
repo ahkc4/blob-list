@@ -6,6 +6,11 @@ status: active
 description: "Sepolia testnet for Mode."
 website: "https://www.mode.network"
 social:
+  - platform: farcaster
+    handle: "modenetwork"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/modenetwork"
   - platform: x
     handle: "modenetwork"
     evidence:

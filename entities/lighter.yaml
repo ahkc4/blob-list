@@ -6,6 +6,11 @@ status: active
 description: "zkLighter, a ZK rollup for the Lighter perpetuals exchange settling on Ethereum."
 website: "https://lighter.xyz"
 social:
+  - platform: farcaster
+    handle: "lighterxyz"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/lighterxyz"
   - platform: x
     handle: "Lighter_xyz"
     evidence:

@@ -6,6 +6,11 @@ status: active
 description: Consumer-focused Ethereum L2 built with the ZK Stack.
 website: https://abs.xyz
 social:
+  - platform: farcaster
+    handle: "abstractchain"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/abstractchain"
   - platform: x
     handle: "AbstractChain"
     evidence:

@@ -6,6 +6,11 @@ status: active
 description: "Sepolia testnet for OP Mainnet."
 website: "https://www.optimism.io"
 social:
+  - platform: farcaster
+    handle: "optimism"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/optimism"
   - platform: x
     handle: "Optimism"
     evidence:

@@ -6,6 +6,11 @@ status: active
 description: "Sepolia testnet for Zora."
 website: "https://zora.co"
 social:
+  - platform: farcaster
+    handle: "zora"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/zora"
   - platform: x
     handle: "zora"
     evidence:
