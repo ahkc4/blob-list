@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "DeFi-focused Ethereum L2 incubated by Polygon Labs and GSR."
 website: "https://katana.network"
+social:
+  - platform: x
+    handle: "katana"
+    evidence:
+      - type: documentation
+        url: "https://katana.network"
 chain_refs:
   - caip2: eip155-747474
     relationship: canonical_chain

@@ -6,6 +6,12 @@ import { bytesToHex } from "@noble/hashes/utils.js";
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 import YAML from "js-yaml";
+import {
+  SOCIAL_PLATFORMS,
+  socialDisplay,
+  socialPlatformDirectory,
+  socialProfileUrl,
+} from "./social-platforms.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -155,6 +161,10 @@ export function buildArtifacts(entities, chainlist) {
     repository: chainlist.source.repository,
   };
 
+  const social = Object.fromEntries(
+    normalizedEntities.map((entity) => [entity.id, resolveSocial(entity)]),
+  );
+
   const entityDisplays = normalizedEntities.map((entity) => ({
     category: entity.category,
     chain_refs: entity.chain_refs ?? [],
@@ -162,6 +172,7 @@ export function buildArtifacts(entities, chainlist) {
     icon: entity.icon ?? null,
     id: entity.id,
     name: entity.name,
+    social: social[entity.id],
     status: entity.status,
     website: entity.website ?? null,
   }));
@@ -192,6 +203,7 @@ export function buildArtifacts(entities, chainlist) {
         icon: entity.icon ?? null,
         name: entity.name,
         role: claim.role,
+        social: social[entity.id],
         status: claim.status,
         valid_from_block: claim.valid_from.block,
         valid_to_block: claim.valid_to?.block ?? null,
@@ -240,6 +252,15 @@ export function buildArtifacts(entities, chainlist) {
       generated_at: generatedAt,
       schema_version: 1,
     },
+    social: {
+      chainlist: chainlistSummary,
+      generated_at: generatedAt,
+      // Published alongside the accounts so consumers can resolve or
+      // re-validate handles for platforms added after they shipped.
+      platforms: socialPlatformDirectory(),
+      schema_version: 1,
+      social,
+    },
     registryMin: {
       by_chain: minByChain,
       chainlist: chainlistSummary,
@@ -251,6 +272,7 @@ export function buildArtifacts(entities, chainlist) {
             chain_refs: entity.chain_refs,
             icon: entity.icon,
             name: entity.name,
+            social: entity.social,
             status: entity.status,
           },
         ]),
@@ -270,6 +292,7 @@ export function artifactFileMap(artifacts) {
       "artifacts/registry.min.json",
       canonicalJson(artifacts.registryMin, { compact: true }),
     ],
+    ["artifacts/social.json", canonicalJson(artifacts.social)],
   ]);
 
   for (const [chain, artifact] of Object.entries(artifacts.byChain).sort(
@@ -350,7 +373,34 @@ export function normalizeEntity(entity) {
     ...claim,
     address: normalizeAddress(claim.address),
   }));
+  if (normalized.social) {
+    normalized.social = [...normalized.social].sort(compareSocialAccounts);
+  }
   return normalized;
+}
+
+/**
+ * Expands source `social` entries into the display form consumers use:
+ * the platform's human-readable name, a canonical profile URL, and a
+ * prefixed handle. URLs are always derived from the platform registry so a
+ * handle is stored exactly once and can never drift from its link.
+ */
+export function resolveSocial(entity) {
+  return [...(entity.social ?? [])]
+    .sort(compareSocialAccounts)
+    .map((account) => ({
+      display: socialDisplay(account.platform, account.handle),
+      handle: account.handle,
+      platform: account.platform,
+      platform_name: SOCIAL_PLATFORMS[account.platform].name,
+      url: socialProfileUrl(account.platform, account.handle),
+    }));
+}
+
+function compareSocialAccounts(a, b) {
+  return (
+    a.platform.localeCompare(b.platform) || a.handle.localeCompare(b.handle)
+  );
 }
 
 export function resolveIcon(icon, chainlist) {

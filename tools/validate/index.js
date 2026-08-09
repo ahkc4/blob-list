@@ -13,6 +13,11 @@ import {
   rootDir,
   stripInternal,
 } from "../lib/registry.js";
+import {
+  SOCIAL_PLATFORM_IDS,
+  isValidSocialHandle,
+  socialPlatform,
+} from "../lib/social-platforms.js";
 
 const URL_EVIDENCE_TYPES = new Set([
   "documentation",
@@ -67,7 +72,20 @@ try {
 
   validateOverlaps(entities, errors);
 
-  const artifacts = buildArtifacts(entities, chainlist);
+  // A source problem the generator cannot survive (an unknown social
+  // platform, for example) must not hide the per-file errors collected
+  // above, so artifact checks are skipped rather than aborting the run.
+  let artifacts;
+  try {
+    artifacts = buildArtifacts(entities, chainlist);
+  } catch (error) {
+    errors.push(error.message);
+  }
+
+  if (!artifacts) {
+    throw new Error(errors.map((error) => `- ${error}`).join("\n"));
+  }
+
   if (!validateRegistryArtifact(artifacts.registry)) {
     for (const error of validateRegistryArtifact.errors ?? []) {
       errors.push(
@@ -140,26 +158,61 @@ async function validateEntitySemantics(entity, chainlist, errors) {
       );
     }
 
-    for (const evidence of claim.evidence ?? []) {
-      if (URL_EVIDENCE_TYPES.has(evidence.type) && !evidence.url) {
+    validateEvidence(entity, claim.label, claim.evidence, chainlist, errors);
+  }
+
+  validateSocial(entity, chainlist, errors);
+}
+
+function validateSocial(entity, chainlist, errors) {
+  const seen = new Set();
+  for (const account of entity.social ?? []) {
+    const context = `social ${account.platform}:${account.handle}`;
+    const platform = socialPlatform(account.platform);
+
+    if (!platform) {
+      errors.push(
+        `${relative(entity.__file)}: unknown social platform ${account.platform} (known: ${SOCIAL_PLATFORM_IDS.join(", ")})`,
+      );
+      continue;
+    }
+
+    if (!isValidSocialHandle(account.platform, account.handle)) {
+      errors.push(
+        `${relative(entity.__file)}: ${account.handle} is not a valid ${platform.name} handle (expected ${platform.handle_pattern}); store the bare handle without a leading @ or profile URL`,
+      );
+    }
+
+    const key = `${account.platform}:${account.handle.toLowerCase()}`;
+    if (seen.has(key)) {
+      errors.push(`${relative(entity.__file)}: duplicate ${context}`);
+    }
+    seen.add(key);
+
+    validateEvidence(entity, context, account.evidence, chainlist, errors);
+  }
+}
+
+function validateEvidence(entity, context, evidence, chainlist, errors) {
+  for (const item of evidence ?? []) {
+    if (URL_EVIDENCE_TYPES.has(item.type) && !item.url) {
+      errors.push(
+        `${relative(entity.__file)}: ${context} ${item.type} evidence needs a URL`,
+      );
+    }
+    if (item.type === "transaction") {
+      if (!item.submission_chain || !item.tx_hash) {
         errors.push(
-          `${relative(entity.__file)}: ${claim.label} ${evidence.type} evidence needs a URL`,
+          `${relative(entity.__file)}: ${context} transaction evidence needs submission_chain and tx_hash`,
         );
       }
-      if (evidence.type === "transaction") {
-        if (!evidence.submission_chain || !evidence.tx_hash) {
-          errors.push(
-            `${relative(entity.__file)}: ${claim.label} transaction evidence needs submission_chain and tx_hash`,
-          );
-        }
-        if (evidence.submission_chain) {
-          assertKnownChain(
-            evidence.submission_chain,
-            chainlist,
-            errors,
-            entity.__file,
-          );
-        }
+      if (item.submission_chain) {
+        assertKnownChain(
+          item.submission_chain,
+          chainlist,
+          errors,
+          entity.__file,
+        );
       }
     }
   }

@@ -5,6 +5,17 @@ category: rollup
 status: active
 description: "OP Stack Ethereum L2 built for World."
 website: "https://world.org/world-chain"
+social:
+  - platform: farcaster
+    handle: "worldcoin"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/worldcoin"
+  - platform: x
+    handle: "world_chain_"
+    evidence:
+      - type: documentation
+        url: "https://world.org/world-chain"
 chain_refs:
   - caip2: eip155-480
     relationship: canonical_chain

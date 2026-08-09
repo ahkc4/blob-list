@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "Ethereum L2 with native yield for ETH and stablecoins."
 website: "https://blast.io"
+social:
+  - platform: x
+    handle: "Blast"
+    evidence:
+      - type: documentation
+        url: "https://blast.io"
 chain_refs:
   - caip2: eip155-81457
     relationship: canonical_chain

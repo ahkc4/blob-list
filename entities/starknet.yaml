@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "Validity rollup settling on Ethereum."
 website: "https://www.starknet.io"
+social:
+  - platform: x
+    handle: "Starknet"
+    evidence:
+      - type: documentation
+        url: "https://www.starknet.io"
 chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain

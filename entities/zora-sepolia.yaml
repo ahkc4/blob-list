@@ -5,6 +5,17 @@ category: rollup
 status: active
 description: "Sepolia testnet for Zora."
 website: "https://zora.co"
+social:
+  - platform: farcaster
+    handle: "zora"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/zora"
+  - platform: x
+    handle: "zora"
+    evidence:
+      - type: documentation
+        url: "https://support.zora.co"
 chain_refs:
   - caip2: eip155-999999999
     relationship: canonical_chain

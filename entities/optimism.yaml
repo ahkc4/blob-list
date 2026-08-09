@@ -5,6 +5,17 @@ category: rollup
 status: active
 description: "Optimistic rollup built on the OP Stack and governed by the Optimism Collective."
 website: "https://www.optimism.io"
+social:
+  - platform: farcaster
+    handle: "optimism"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/optimism"
+  - platform: x
+    handle: "Optimism"
+    evidence:
+      - type: documentation
+        url: "https://www.optimism.io"
 chain_refs:
   - caip2: eip155-10
     relationship: canonical_chain

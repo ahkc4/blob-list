@@ -10,6 +10,7 @@ The registry is intended for blob explorers, dashboards, wallets, researchers, a
 - Block-range validity for each attribution.
 - Evidence for every address claim.
 - Chain references using CAIP-2 IDs such as `eip155-1`.
+- Evidence-backed social accounts for each entity (X, Farcaster, and any platform added to the registry later).
 - Entities that are not necessarily chains, including infrastructure providers, bridges, exchanges, research users, and individuals.
 
 ## Layout
@@ -47,9 +48,10 @@ curl -L -o registry.json \
 curl -L -o registry.min.json \
   https://github.com/tirante-dev/blob-list/releases/latest/download/registry.min.json
 
-# Entities and icon metadata
+# Entities, icon metadata, and social accounts
 curl -L https://github.com/tirante-dev/blob-list/releases/latest/download/entities.json
 curl -L https://github.com/tirante-dev/blob-list/releases/latest/download/icons.json
+curl -L https://github.com/tirante-dev/blob-list/releases/latest/download/social.json
 
 # Per-chain slice (asset name is the CAIP-2 ref, e.g. eip155-1)
 curl -L https://github.com/tirante-dev/blob-list/releases/latest/download/eip155-1.json
@@ -69,7 +71,46 @@ To pin to a specific dataset version, swap `latest/download` for
 3. Find address claims for that sender.
 4. Filter claims by block number.
 5. Prefer active, non-disputed, highest-confidence claims.
-6. Display the entity name, role, confidence, chain refs, and icon metadata.
+6. Display the entity name, role, confidence, chain refs, icon metadata, and social accounts.
+
+## Social Accounts
+
+Entities carry a `social` list of accounts. Each source entry stores only the
+platform id and the bare handle; profile URLs are derived at generation time
+from the platform registry in
+[`tools/lib/social-platforms.js`](tools/lib/social-platforms.js), so a handle is
+recorded exactly once and can never drift from its link.
+
+Resolved accounts appear on every entity in `entities.json`, `registry.min.json`,
+and the per-chain slices, and are also published on their own in `social.json`:
+
+```json
+{
+  "platforms": {
+    "x": {
+      "handle_pattern": "^[A-Za-z0-9_]{1,15}$",
+      "handle_prefix": "@",
+      "name": "X",
+      "url_template": "https://x.com/{handle}"
+    }
+  },
+  "social": {
+    "linea": [
+      {
+        "display": "@linea",
+        "handle": "linea",
+        "platform": "farcaster",
+        "platform_name": "Farcaster",
+        "url": "https://farcaster.xyz/linea"
+      }
+    ]
+  }
+}
+```
+
+`social.json` ships the platform directory alongside the accounts so consumers
+can render or re-validate handles for platforms added after they shipped,
+without a code change on their side.
 
 ## Development
 

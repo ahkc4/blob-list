@@ -5,6 +5,17 @@ category: rollup
 status: active
 description: "OP Stack Ethereum L2 developed by Uniswap Labs."
 website: "https://unichain.org"
+social:
+  - platform: farcaster
+    handle: "unichain"
+    evidence:
+      - type: dashboard
+        url: "https://farcaster.xyz/unichain"
+  - platform: x
+    handle: "unichain"
+    evidence:
+      - type: documentation
+        url: "https://unichain.org"
 chain_refs:
   - caip2: eip155-130
     relationship: canonical_chain

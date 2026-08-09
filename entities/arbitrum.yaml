@@ -5,6 +5,17 @@ category: rollup
 status: active
 description: "Optimistic rollup developed by Offchain Labs."
 website: "https://arbitrum.io"
+social:
+  - platform: x
+    handle: "arbitrum"
+    evidence:
+      - type: documentation
+        url: "https://arbitrum.foundation"
+  - platform: farcaster
+    handle: "arbitrum"
+    evidence:
+      - type: documentation
+        url: "https://arbitrum.foundation"
 chain_refs:
   - caip2: eip155-42161
     relationship: canonical_chain

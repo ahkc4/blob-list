@@ -5,6 +5,14 @@ category: rollup
 status: active
 description: "OKX Layer 2 rollup on the OP Stack settling on Ethereum."
 website: "https://web3.okx.com/xlayer"
+social:
+  - platform: x
+    handle: "XLayerOfficial"
+    evidence:
+      - type: repository
+        url: "https://github.com/l2beat/l2beat/blob/main/packages/config/src/projects/xlayer/xlayer.ts"
+      - type: announcement
+        url: "https://x.com/okx/status/1955522864993665071"
 chain_refs:
   - caip2: eip155-196
     relationship: canonical_chain

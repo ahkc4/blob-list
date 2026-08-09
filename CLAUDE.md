@@ -4,7 +4,7 @@ This repository is a public, chainlist-aware registry of blob-submitting EVM add
 
 ## Core Rules
 
-- Do not add attribution claims without public evidence.
+- Do not add attribution claims without public evidence. The same rule applies to entity `social` accounts.
 - Do not invent chain metadata. Chain IDs, names, RPCs, explorers, currencies, icons, and related chain metadata belong to `ethereum-lists/chains`. The one exception is entity icons: a local SVG under `icons/local/` may serve as a fallback while Chainlist has no icon for the entity's chain; resolution automatically prefers the Chainlist icon once one exists upstream (see `icons/local/README.md`).
 - Keep one source YAML file per entity in `entities/`, with the filename matching the entity `id`.
 - Preserve history by closing ranges with `valid_to.block` instead of rewriting past claims.
@@ -31,6 +31,7 @@ Run `npm run fetch-chainlist` and `npm run generate` after changing `entities/`,
 - `submission_chain` and all chain references use CAIP-2 refs such as `eip155-1`.
 - `data/chainlist/snapshot.json` is a vendored Chainlist lockfile for deterministic validation and generation; it is not registry-owned chain metadata.
 - EVM addresses must be checksummed.
+- `social` entries store a platform id and a bare handle only. Profile URLs are derived from the platform registry in `tools/lib/social-platforms.js`, which is the single source of truth: adding a platform is one entry there, with no schema or generator change.
 - Every address claim needs at least one evidence item.
 - `valid_to: null` means the claim is open-ended.
 - The overlap rule is enforced: the same `submission_chain + address + role` cannot map to two active non-disputed entities over overlapping block ranges.

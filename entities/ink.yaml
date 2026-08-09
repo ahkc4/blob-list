@@ -5,6 +5,17 @@ category: rollup
 status: active
 description: "OP Stack Ethereum L2 developed by Kraken."
 website: "https://inkonchain.com"
+social:
+  - platform: x
+    handle: "inkonchain"
+    evidence:
+      - type: documentation
+        url: "https://inkonchain.com"
+  - platform: farcaster
+    handle: "inkonchain"
+    evidence:
+      - type: repository
+        url: "https://github.com/l2beat/l2beat/blob/main/packages/config/src/projects/ink/ink.ts"
 chain_refs:
   - caip2: eip155-57073
     relationship: canonical_chain
