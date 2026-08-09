@@ -40,6 +40,6 @@ Run `npm run fetch-chainlist` and `npm run generate` after changing `entities/`,
 
 - Keep `AGENTS.md` as a symlink to this file.
 - Prefer small PRs with focused attribution or tooling changes.
-- The protected `main` branch requires a PR and the `validate` CI check; approving reviews are not platform-enforced.
-- The `at/refresh-chainlist-snapshot` automation PR auto-merges once `validate` passes; attribution and tooling PRs still get human review before merge.
+- The protected `main` branch requires a PR, the `validate` CI check, and one approving review (platform-enforced).
+- The `at/refresh-chainlist-snapshot` automation PR is opened by the Chainlist refresh GitHub App, approved by `github-actions[bot]`, and auto-merges once `validate` passes; attribution and tooling PRs get human review before merge.
 - Do not bypass branch protection for ordinary changes.

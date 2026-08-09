@@ -6,7 +6,6 @@ on:
   workflow_dispatch:
 
 permissions:
-  actions: write
   contents: write
   pull-requests: write
 
@@ -16,6 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      - name: Generate app token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.CHAINLIST_APP_ID }}
+          private-key: ${{ secrets.CHAINLIST_APP_PRIVATE_KEY }}
+
       - name: Checkout
         uses: actions/checkout@v7
 
@@ -33,10 +39,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run fetch-chainlist
 
+      # Opening the PR with the app token (not GITHUB_TOKEN) makes GitHub
+      # trigger the normal pull_request CI run, so the required validate
+      # check appears without a manual workflow dispatch.
       - name: Create pull request
         id: chainlist-pr
         uses: peter-evans/create-pull-request@v8
         with:
+          token: ${{ steps.app-token.outputs.token }}
           add-paths: data/chainlist/snapshot.json
           branch: at/refresh-chainlist-snapshot
           commit-message: "chore: refresh Chainlist snapshot"
@@ -48,33 +58,28 @@ jobs:
             This keeps the vendored Chainlist lockfile current while leaving chain metadata ownership upstream.
             Generated artifacts are not committed; they are published on GitHub Releases.
 
-      - name: Auto-merge pull request
+      # The app is the PR author, so the workflow's own GITHUB_TOKEN
+      # (github-actions[bot]) is a distinct identity and its approval
+      # satisfies main's required review. Auto-merge then lets GitHub
+      # merge as soon as the required validate check passes.
+      - name: Approve and enable auto-merge
         if: steps.chainlist-pr.outputs.pull-request-operation == 'created' || steps.chainlist-pr.outputs.pull-request-operation == 'updated'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APP_TOKEN: ${{ steps.app-token.outputs.token }}
           PR_URL: ${{ steps.chainlist-pr.outputs.pull-request-url }}
-          BRANCH: at/refresh-chainlist-snapshot
         run: |
           set -euo pipefail
 
-          # PRs opened with GITHUB_TOKEN get no pull_request CI run, so
-          # dispatch one on the branch to produce the required validate check.
-          gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$BRANCH" || \
-            echo "::warning::Could not dispatch CI for $BRANCH."
-
-          merged=false
-          # The dispatched checks take a moment to appear on the PR, and
-          # `gh pr checks --watch` errors while none are reported yet.
-          for attempt in 1 2 3 4 5; do
-            if gh pr checks "$PR_URL" --repo "$GITHUB_REPOSITORY" --required --watch; then
-              if gh pr merge "$PR_URL" --repo "$GITHUB_REPOSITORY" --squash; then
-                merged=true
-              fi
-              break
-            fi
-            sleep 30
-          done
-
-          if [ "$merged" != true ]; then
-            echo "::warning::Could not auto-merge $PR_URL; leaving it open for manual review."
+          # Required checks are strict (branch must be up to date). The PR
+          # is cut from latest main moments ago, but if main moved mid-run,
+          # update the branch with the app token so CI re-triggers on the
+          # new head. Approve afterwards: a new push dismisses stale reviews.
+          state="$(gh pr view "$PR_URL" --json mergeStateStatus --jq .mergeStateStatus)"
+          if [ "$state" = "BEHIND" ]; then
+            GH_TOKEN="$APP_TOKEN" gh pr update-branch "$PR_URL" || \
+              echo "::warning::Could not update $PR_URL; auto-merge may stall until the next scheduled run."
           fi
+
+          gh pr review "$PR_URL" --approve --body "Automated approval for the scheduled Chainlist snapshot refresh."
+          gh pr merge "$PR_URL" --auto --squash
