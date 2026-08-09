@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "Starknet-based derivatives application chain settling on Ethereum."
 website: "https://www.paradex.trade"
+social:
+  - platform: x
+    handle: "paradex"
+    evidence:
+      - type: documentation
+        url: "https://www.paradex.trade"
 chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain

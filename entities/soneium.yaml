@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "OP Stack Ethereum L2 developed by Sony Block Solutions Labs."
 website: "https://soneium.org"
+social:
+  - platform: x
+    handle: "soneium"
+    evidence:
+      - type: documentation
+        url: "https://docs.soneium.org"
 chain_refs:
   - caip2: eip155-1868
     relationship: canonical_chain

@@ -53,6 +53,29 @@
         }
       ]
     },
+    "social_account": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform", "platform_name", "handle", "display", "url"],
+      "properties": {
+        "platform": {
+          "type": "string"
+        },
+        "platform_name": {
+          "type": "string"
+        },
+        "handle": {
+          "type": "string"
+        },
+        "display": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
     "claim": {
       "type": "object",
       "additionalProperties": false,
@@ -66,7 +89,8 @@
         "valid_from_block",
         "valid_to_block",
         "chain_refs",
-        "icon"
+        "icon",
+        "social"
       ],
       "properties": {
         "entity_id": {
@@ -103,6 +127,12 @@
         },
         "icon": {
           "$ref": "#/$defs/icon"
+        },
+        "social": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/social_account"
+          }
         }
       }
     }

@@ -5,6 +5,17 @@ category: rollup
 status: active
 description: "Ethereum L2 incubated by Coinbase."
 website: "https://base.org"
+social:
+  - platform: x
+    handle: "base"
+    evidence:
+      - type: documentation
+        url: "https://base.org"
+  - platform: farcaster
+    handle: "base"
+    evidence:
+      - type: repository
+        url: "https://github.com/l2beat/l2beat/blob/main/packages/config/src/projects/base/base.ts"
 chain_refs:
   - caip2: eip155-8453
     relationship: canonical_chain

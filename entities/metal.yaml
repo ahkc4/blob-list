@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "OP Stack Ethereum L2 focused on onchain banking and payments."
 website: "https://metall2.com"
+social:
+  - platform: x
+    handle: "metal_l2"
+    evidence:
+      - type: documentation
+        url: "https://metall2.com"
 chain_refs:
   - caip2: eip155-1750
     relationship: canonical_chain

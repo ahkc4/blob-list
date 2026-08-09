@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "OP Stack Ethereum L2 focused on DeFi applications."
 website: "https://mode.network"
+social:
+  - platform: x
+    handle: "modenetwork"
+    evidence:
+      - type: documentation
+        url: "https://mode.network"
 chain_refs:
   - caip2: eip155-34443
     relationship: canonical_chain

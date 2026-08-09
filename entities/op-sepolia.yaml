@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "Sepolia testnet for OP Mainnet."
 website: "https://www.optimism.io"
+social:
+  - platform: x
+    handle: "Optimism"
+    evidence:
+      - type: documentation
+        url: "https://www.optimism.io"
 chain_refs:
   - caip2: eip155-11155420
     relationship: canonical_chain

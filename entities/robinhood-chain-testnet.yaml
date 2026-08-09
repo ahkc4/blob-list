@@ -5,6 +5,14 @@ category: rollup
 status: active
 description: "Sepolia testnet for Robinhood Chain."
 website: "https://robinhood.com/chain"
+social:
+  - platform: x
+    handle: "RobinhoodApp"
+    evidence:
+      - type: documentation
+        url: "https://robinhood.com"
+      - type: announcement
+        url: "https://x.com/RobinhoodApp/status/2021600209524969824"
 chain_refs:
   - caip2: eip155-11155111
     relationship: settlement_chain

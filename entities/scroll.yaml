@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "Ethereum zkEVM rollup."
 website: "https://scroll.io"
+social:
+  - platform: x
+    handle: "Scroll_ZKP"
+    evidence:
+      - type: documentation
+        url: "https://docs.scroll.io"
 chain_refs:
   - caip2: eip155-534352
     relationship: canonical_chain

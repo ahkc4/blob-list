@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "ZK Stack (Elastic Network) rollup by the ADI Foundation settling on Ethereum."
 website: "https://adi.foundation"
+social:
+  - platform: x
+    handle: "ADIChain_"
+    evidence:
+      - type: documentation
+        url: "https://adi.foundation"
 chain_refs:
   - caip2: eip155-36900
     relationship: canonical_chain

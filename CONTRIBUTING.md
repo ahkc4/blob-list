@@ -18,6 +18,31 @@ Thanks for helping make blob attribution less hand-wavy.
 - `valid_to: null` means the claim is currently open-ended.
 - The same `submission_chain + address + role` cannot map to two active, non-disputed entities over overlapping block ranges.
 
+## Social Accounts
+
+- `social` is an optional list of accounts for the entity itself, not for its addresses.
+- Store the bare handle only. Do not store a leading `@` or a profile URL; the URL is derived from the platform registry so it can never disagree with the handle.
+- Every account needs at least one evidence item, same as an address claim. The entity's own site or docs linking the account is the strongest evidence; a curated public source such as the L2BEAT project config also works.
+- Prefer the account specific to the entity over its parent brand's account when both exist (`@world_chain_` rather than `@worldnetwork`). List several accounts when the entity genuinely runs several.
+- Testnet entities reuse the accounts and evidence of the project they mirror.
+
+```yaml
+social:
+  - platform: x
+    handle: "LineaBuild"
+    evidence:
+      - type: documentation
+        url: "https://linea.build"
+```
+
+### Adding A Platform
+
+Add one entry to `SOCIAL_PLATFORMS` in `tools/lib/social-platforms.js` with the
+platform's display name, an anchored handle pattern, and a `{handle}` URL
+template. Entity YAML accepts the new platform id immediately; no schema or
+generator change is needed, and the platform is published in `social.json` so
+consumers can resolve it too.
+
 ## Icons
 
 - Give an entity an `icon` block when a usable mark exists; both fields are optional but at least one is required.

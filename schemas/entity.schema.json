@@ -50,6 +50,13 @@
       "type": "string",
       "format": "uri"
     },
+    "social": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/social_account"
+      }
+    },
     "chain_refs": {
       "type": "array",
       "items": {
@@ -185,6 +192,28 @@
         },
         "tx_hash": {
           "$ref": "#/$defs/tx_hash"
+        }
+      }
+    },
+    "social_account": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform", "handle", "evidence"],
+      "properties": {
+        "platform": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "handle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
         }
       }
     },

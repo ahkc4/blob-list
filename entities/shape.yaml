@@ -5,6 +5,22 @@ category: rollup
 status: active
 description: "OP Stack Ethereum L2 for creators and onchain culture."
 website: "https://shape.network"
+social:
+  - platform: x
+    handle: "Shape_L2"
+    evidence:
+      - type: repository
+        url: "https://github.com/l2beat/l2beat/blob/main/packages/config/src/projects/shape/shape.ts"
+  - platform: x
+    handle: "shape"
+    evidence:
+      - type: documentation
+        url: "https://shape.network"
+  - platform: farcaster
+    handle: "shape-l2"
+    evidence:
+      - type: documentation
+        url: "https://shape.network"
 chain_refs:
   - caip2: eip155-360
     relationship: canonical_chain

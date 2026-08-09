@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "OP Stack Ethereum L2 for media and creator applications."
 website: "https://zora.energy"
+social:
+  - platform: x
+    handle: "zora"
+    evidence:
+      - type: documentation
+        url: "https://support.zora.co"
 chain_refs:
   - caip2: eip155-7777777
     relationship: canonical_chain

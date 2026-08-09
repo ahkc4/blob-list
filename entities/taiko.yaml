@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: Ethereum-equivalent based rollup.
 website: https://taiko.xyz
+social:
+  - platform: x
+    handle: "taikoxyz"
+    evidence:
+      - type: documentation
+        url: "https://taiko.xyz"
 chain_refs:
   - caip2: eip155-167000
     relationship: canonical_chain

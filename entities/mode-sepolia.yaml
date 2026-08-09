@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "Sepolia testnet for Mode."
 website: "https://www.mode.network"
+social:
+  - platform: x
+    handle: "modenetwork"
+    evidence:
+      - type: documentation
+        url: "https://mode.network"
 chain_refs:
   - caip2: eip155-919
     relationship: canonical_chain

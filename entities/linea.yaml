@@ -5,6 +5,17 @@ category: rollup
 status: active
 description: Ethereum zkEVM rollup developed by Consensys.
 website: https://linea.build
+social:
+  - platform: x
+    handle: "LineaBuild"
+    evidence:
+      - type: documentation
+        url: "https://linea.build"
+  - platform: farcaster
+    handle: "linea"
+    evidence:
+      - type: documentation
+        url: "https://linea.build"
 chain_refs:
   - caip2: eip155-59144
     relationship: canonical_chain

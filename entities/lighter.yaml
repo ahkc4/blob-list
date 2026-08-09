@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "zkLighter, a ZK rollup for the Lighter perpetuals exchange settling on Ethereum."
 website: "https://lighter.xyz"
+social:
+  - platform: x
+    handle: "Lighter_xyz"
+    evidence:
+      - type: documentation
+        url: "https://lighter.xyz"
 chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain

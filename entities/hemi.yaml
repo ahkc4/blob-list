@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: "Modular Ethereum L2 secured by Bitcoin-aware infrastructure."
 website: "https://hemi.xyz"
+social:
+  - platform: x
+    handle: "hemi_xyz"
+    evidence:
+      - type: documentation
+        url: "https://hemi.xyz"
 chain_refs:
   - caip2: eip155-43111
     relationship: canonical_chain

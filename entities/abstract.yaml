@@ -5,6 +5,12 @@ category: rollup
 status: active
 description: Consumer-focused Ethereum L2 built with the ZK Stack.
 website: https://abs.xyz
+social:
+  - platform: x
+    handle: "AbstractChain"
+    evidence:
+      - type: documentation
+        url: "https://abs.xyz"
 chain_refs:
   - caip2: eip155-2741
     relationship: canonical_chain
