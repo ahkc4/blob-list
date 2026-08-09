@@ -31,17 +31,45 @@ addresses:
   - submission_chain: eip155-1
     address: "0x500d7Ea63CF2E501dadaA5feeC1FC19FE2Aa72Ac"
     role: batcher
-    label: "Ink batcher"
-    status: active
+    label: "Ink old batcher"
+    status: inactive
     confidence: confirmed
     valid_from:
       block: 21345811
-    valid_to: null
+    valid_to:
+      block: 25631763
     evidence:
       - type: repository
         url: "https://github.com/ethereum-optimism/superchain-registry/blob/main/superchain/configs/mainnet/ink.toml"
+      - type: repository
+        url: "https://github.com/l2beat/l2beat/blob/main/packages/config/src/projects/ink/ink.ts"
       - type: dashboard
         url: "https://blobscan.com/tx/0x407752a39ad5fe0a6b125f007d92034fe428c0e4773ba9ddc8e685faa4801b74"
       - type: transaction
         submission_chain: eip155-1
         tx_hash: "0x407752a39ad5fe0a6b125f007d92034fe428c0e4773ba9ddc8e685faa4801b74"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xfa65e0f5dda506e66e854c3b00dea68e695fee308551a4d9e739968613b4e164"
+  - submission_chain: eip155-1
+    address: "0x6db6161fC5662450E801398Bad62dD9921216B98"
+    role: batcher
+    label: "Ink batcher"
+    status: active
+    confidence: confirmed
+    valid_from:
+      block: 25631917
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/l2beat/l2beat/blob/main/packages/config/src/projects/ink/ink.ts"
+      - type: analysis
+        url: "https://etherscan.io/address/0x6db6161fC5662450E801398Bad62dD9921216B98"
+      - type: dashboard
+        url: "https://blobscan.com/tx/0x9975a5f14eb9ca1e1aedcc9d987436fe06110f38f7462cd0ee190bf3c6412e73"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x482ce168eabf50144cb2377bfc9c3dd8570e4f04a96fc0c9d5e88f146745dc8d"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x9975a5f14eb9ca1e1aedcc9d987436fe06110f38f7462cd0ee190bf3c6412e73"
