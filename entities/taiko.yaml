@@ -28,11 +28,12 @@ addresses:
     address: "0x000000633b68f5D8D3a86593ebB815b4663BCBe0"
     role: proposer
     label: Taiko blob proposer
-    status: active
+    status: inactive
     confidence: probable
     valid_from:
       block: 19960128
-    valid_to: null
+    valid_to:
+      block: 22592465
     evidence:
       - type: dashboard
         url: https://blobscan.com/tx/0x74f4dd0948ca1c933fbd8372532f16b5d9f8efaa779ce91a59b36e2fea95c936
@@ -41,20 +42,80 @@ addresses:
       - type: transaction
         submission_chain: eip155-1
         tx_hash: "0x74f4dd0948ca1c933fbd8372532f16b5d9f8efaa779ce91a59b36e2fea95c936"
+      - type: dashboard
+        url: https://blobscan.com/tx/0x4b9a0a5f71d3ffb44a6dab55db5f94e96f0f2a7ab61cadd442ae037f87af1c7d
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x4b9a0a5f71d3ffb44a6dab55db5f94e96f0f2a7ab61cadd442ae037f87af1c7d"
   - submission_chain: eip155-1
     address: "0x5F62d006C10C009ff50C878Cd6157aC861C99990"
     role: proposer
     label: Taiko blob proposer
     status: active
-    confidence: probable
+    confidence: confirmed
     valid_from:
-      block: 25167138
+      block: 23118291
     valid_to: null
     evidence:
+      - type: repository
+        url: https://github.com/taikoxyz/taiko-mono/blob/main/packages/protocol/deployments/mainnet-contract-logs-L1.md
+      - type: verified_contract
+        url: https://etherscan.io/address/0xFD019460881e6EeC632258222393d5821029b2ac#readProxyContract
       - type: dashboard
-        url: https://blobscan.com/tx/0x2236661334e6178447cd82019a955e1971187698289af4cca79ce2a2e23c6951
+        url: https://blobscan.com/tx/0x0b7df39e9d9d570e7d57b880a6eff1b14822f0bfdf460061c296d168d7ead16a
       - type: analysis
         url: https://etherscan.io/address/0x5f62d006c10c009ff50c878cd6157ac861c99990
       - type: transaction
         submission_chain: eip155-1
+        tx_hash: "0x0b7df39e9d9d570e7d57b880a6eff1b14822f0bfdf460061c296d168d7ead16a"
+      - type: transaction
+        submission_chain: eip155-1
         tx_hash: "0x2236661334e6178447cd82019a955e1971187698289af4cca79ce2a2e23c6951"
+  - submission_chain: eip155-1
+    address: "0x000cb000E880A92a8f383D69dA2142a969B93DE7"
+    role: proposer
+    label: Taiko blob proposer
+    status: active
+    confidence: confirmed
+    valid_from:
+      block: 23118366
+    valid_to: null
+    evidence:
+      - type: repository
+        url: https://github.com/taikoxyz/taiko-mono/blob/main/packages/protocol/deployments/mainnet-contract-logs-L1.md
+      - type: verified_contract
+        url: https://etherscan.io/address/0xFD019460881e6EeC632258222393d5821029b2ac#readProxyContract
+      - type: dashboard
+        url: https://blobscan.com/tx/0xbf5fa89bc43f68746739e67d76595f466ebe5b18d0c67f33eae185421c514bb7
+      - type: analysis
+        url: https://etherscan.io/address/0x000cb000e880a92a8f383d69da2142a969b93de7
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xbf5fa89bc43f68746739e67d76595f466ebe5b18d0c67f33eae185421c514bb7"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x34f2afd73ca87b579a5b9da2472f98b2e65881c15ffb317590aff6a31e41e894"
+  - submission_chain: eip155-1
+    address: "0x2267C7246523191b8bf7615B86b3bdEE612b7D9E"
+    role: proposer
+    label: Taiko blob proposer
+    status: active
+    confidence: confirmed
+    valid_from:
+      block: 25581749
+    valid_to: null
+    evidence:
+      - type: repository
+        url: https://github.com/taikoxyz/taiko-mono/blob/main/packages/protocol/deployments/mainnet-contract-logs-L1.md
+      - type: verified_contract
+        url: https://etherscan.io/address/0xFD019460881e6EeC632258222393d5821029b2ac#readProxyContract
+      - type: dashboard
+        url: https://blobscan.com/tx/0x8f37b0882a4ae6a279aefd749b3ea5e6cac6c5ea6838fca88fcc55898f5549a4
+      - type: analysis
+        url: https://etherscan.io/address/0x2267c7246523191b8bf7615b86b3bdee612b7d9e
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x8f37b0882a4ae6a279aefd749b3ea5e6cac6c5ea6838fca88fcc55898f5549a4"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xca1ec686daa377e99899726de59aaf7eaa8408ed831cbf82fc3f4b846f2f32b9"
