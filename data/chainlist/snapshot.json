@@ -183,7 +183,9 @@
           "url": "https://optimism-sepolia.blockscout.com"
         }
       ],
-      "faucets": ["https://app.optimism.io/faucet"],
+      "faucets": [
+        "https://app.optimism.io/faucet"
+      ],
       "infoURL": "https://optimism.io",
       "name": "OP Sepolia Testnet",
       "nativeCurrency": {
@@ -281,7 +283,9 @@
         "symbol": "ETH"
       },
       "networkId": 1750,
-      "rpc": ["https://rpc.metall2.com"],
+      "rpc": [
+        "https://rpc.metall2.com"
+      ],
       "shortName": "metall2"
     },
     "eip155-1868": {
@@ -323,7 +327,9 @@
         "chain": "eip155-1",
         "type": "L2"
       },
-      "rpc": ["https://rpc.soneium.org"],
+      "rpc": [
+        "https://rpc.soneium.org"
+      ],
       "shortName": "soneium",
       "status": "active",
       "title": "Soneium mainnet"
@@ -349,7 +355,10 @@
         "symbol": "OKB"
       },
       "networkId": 196,
-      "rpc": ["https://rpc.xlayer.tech", "https://xlayerrpc.okx.com"],
+      "rpc": [
+        "https://rpc.xlayer.tech",
+        "https://xlayerrpc.okx.com"
+      ],
       "shortName": "okb",
       "status": "active"
     },
@@ -387,7 +396,9 @@
         "chain": "eip155-1",
         "type": "L2"
       },
-      "rpc": ["https://api.mainnet.abs.xyz"],
+      "rpc": [
+        "https://api.mainnet.abs.xyz"
+      ],
       "shortName": "abstract"
     },
     "eip155-324": {
@@ -506,7 +517,9 @@
         "symbol": "ADI"
       },
       "networkId": 36900,
-      "rpc": ["https://rpc.adifoundation.ai"],
+      "rpc": [
+        "https://rpc.adifoundation.ai"
+      ],
       "shortName": "adi"
     },
     "eip155-42161": {
@@ -626,9 +639,88 @@
         "chain": "eip155-1",
         "type": "L2"
       },
-      "rpc": ["https://rpc.hemi.network/rpc"],
+      "rpc": [
+        "https://rpc.hemi.network/rpc"
+      ],
       "shortName": "hemi",
       "status": "active"
+    },
+    "eip155-4663": {
+      "chain": "ETH",
+      "chainId": 4663,
+      "explorers": [
+        {
+          "icon": "blockscout",
+          "name": "blockscout",
+          "standard": "EIP3091",
+          "url": "https://robinhoodchain.blockscout.com"
+        },
+        {
+          "name": "HoodScan",
+          "standard": "EIP3091",
+          "url": "https://hoodscan.ai"
+        }
+      ],
+      "faucets": [],
+      "infoURL": "https://docs.robinhood.com/chain",
+      "name": "Robinhood Chain",
+      "nativeCurrency": {
+        "decimals": 18,
+        "name": "Ether",
+        "symbol": "ETH"
+      },
+      "networkId": 4663,
+      "parent": {
+        "bridges": [
+          {
+            "url": "https://portal.arbitrum.io/bridge?destinationChain=robinhood-chain&sourceChain=ethereum"
+          }
+        ],
+        "chain": "eip155-1",
+        "type": "L2"
+      },
+      "rpc": [
+        "https://rpc.mainnet.chain.robinhood.com",
+        "https://rpc.arrowrpc.com"
+      ],
+      "shortName": "robinhoodchain",
+      "status": "active"
+    },
+    "eip155-46630": {
+      "chain": "ETH",
+      "chainId": 46630,
+      "explorers": [
+        {
+          "icon": "blockscout",
+          "name": "blockscout",
+          "standard": "EIP3091",
+          "url": "https://explorer.testnet.chain.robinhood.com"
+        }
+      ],
+      "faucets": [],
+      "infoURL": "https://docs.robinhood.com/chain/",
+      "name": "Robinhood Chain Testnet",
+      "nativeCurrency": {
+        "decimals": 18,
+        "name": "Sepolia Ether",
+        "symbol": "ETH"
+      },
+      "networkId": 46630,
+      "parent": {
+        "bridges": [
+          {
+            "url": "https://portal.arbitrum.io/bridge"
+          }
+        ],
+        "chain": "eip155-11155111",
+        "type": "L2"
+      },
+      "rpc": [
+        "https://rpc.testnet.chain.robinhood.com/rpc"
+      ],
+      "shortName": "rh-testnet",
+      "slip44": 1,
+      "title": "Robinhood Chain Testnet"
     },
     "eip155-480": {
       "chain": "ETH",
@@ -727,7 +819,9 @@
           "url": "https://explorer.inkonchain.com"
         }
       ],
-      "faucets": ["https://inkonchain.com/faucet"],
+      "faucets": [
+        "https://inkonchain.com/faucet"
+      ],
       "features": [
         {
           "name": "EIP155"
@@ -856,6 +950,63 @@
       "status": "active",
       "title": "Linea Mainnet"
     },
+    "eip155-747474": {
+      "chain": "katana",
+      "chainId": 747474,
+      "explorers": [
+        {
+          "icon": "katana",
+          "name": "katanascan",
+          "standard": "EIP3091",
+          "url": "https://katanascan.com"
+        },
+        {
+          "icon": "katana",
+          "name": "katana explorer",
+          "standard": "EIP3091",
+          "url": "https://explorer.katanarpc.com"
+        }
+      ],
+      "faucets": [],
+      "features": [
+        {
+          "name": "EIP155"
+        },
+        {
+          "name": "EIP1559"
+        },
+        {
+          "name": "EIP4844"
+        },
+        {
+          "name": "EIP7702"
+        }
+      ],
+      "icon": "katana",
+      "infoURL": "https://katana.network",
+      "name": "katana",
+      "nativeCurrency": {
+        "decimals": 18,
+        "name": "Ether",
+        "symbol": "ETH"
+      },
+      "networkId": 747474,
+      "parent": {
+        "bridges": [
+          {
+            "url": "https://bridge.katana.network"
+          }
+        ],
+        "chain": "eip155-1",
+        "type": "L2"
+      },
+      "rpc": [
+        "https://rpc.katana.network",
+        "https://katana.gateway.tenderly.co/",
+        "https://rpc.katanarpc.com/"
+      ],
+      "shortName": "katana"
+    },
     "eip155-7777777": {
       "chain": "ETH",
       "chainId": 7777777,
@@ -876,7 +1027,9 @@
         "symbol": "ETH"
       },
       "networkId": 7777777,
-      "rpc": ["https://rpc.zora.energy/"],
+      "rpc": [
+        "https://rpc.zora.energy/"
+      ],
       "shortName": "zora"
     },
     "eip155-81457": {
@@ -1021,7 +1174,9 @@
           "url": "https://testnet.modescan.io"
         }
       ],
-      "faucets": ["https://sepoliafaucet.com/"],
+      "faucets": [
+        "https://sepoliafaucet.com/"
+      ],
       "icon": "modeTestnet",
       "infoURL": "https://docs.mode.network/",
       "name": "Mode Testnet",
@@ -1040,7 +1195,9 @@
         "chain": "eip155-11155111",
         "type": "L2"
       },
-      "rpc": ["https://sepolia.mode.network"],
+      "rpc": [
+        "https://sepolia.mode.network"
+      ],
       "shortName": "modesep",
       "slip44": 1
     },
@@ -1064,7 +1221,9 @@
         "symbol": "ETH"
       },
       "networkId": 999999999,
-      "rpc": ["https://sepolia.rpc.zora.energy"],
+      "rpc": [
+        "https://sepolia.rpc.zora.energy"
+      ],
       "shortName": "zsep",
       "slip44": 1
     }
@@ -1124,6 +1283,14 @@
         "height": 1200,
         "url": "ipfs://QmfP6GDn5eXFcpWuoiyWn5pjn6PYB7HQhRD8nSko1zR8KD",
         "width": 1200
+      }
+    ],
+    "katana": [
+      {
+        "format": "png",
+        "height": 750,
+        "url": "ipfs://QmVAQiumxDxuEW7HdeRW8NiRKVpXVnQumwSW44Uq6py1k7",
+        "width": 750
       }
     ],
     "linea": [
@@ -1217,10 +1384,10 @@
   },
   "schema_version": 1,
   "source": {
-    "commit": "97748ac2f897837ab47ca8663a72677a9daf1e27",
-    "fetched_at": "2026-07-06T07:15:56.599Z",
+    "commit": "b1846e6e25229c88435ac6ad13e1adb9c7ee7f88",
+    "fetched_at": "2026-08-09T20:20:54.153Z",
     "ref": "master",
     "repository": "ethereum-lists/chains",
-    "url": "https://github.com/ethereum-lists/chains/tree/97748ac2f897837ab47ca8663a72677a9daf1e27"
+    "url": "https://github.com/ethereum-lists/chains/tree/b1846e6e25229c88435ac6ad13e1adb9c7ee7f88"
   }
 }
