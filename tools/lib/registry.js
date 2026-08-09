@@ -44,9 +44,20 @@ export async function readJson(file) {
 export async function writeJson(file, value, { compact = false } = {}) {
   await fs.mkdir(path.dirname(file), { recursive: true });
   const sorted = sortObject(value);
-  const json = compact
-    ? `${JSON.stringify(sorted)}\n`
-    : `${JSON.stringify(sorted, null, 2)}\n`;
+  let json;
+  if (compact) {
+    json = `${JSON.stringify(sorted)}\n`;
+  } else {
+    // Committed JSON must satisfy `npm run format:check`; JSON.stringify
+    // disagrees with prettier on short arrays, so format with the repo's
+    // prettier (a devDependency, hence the lazy import).
+    const { default: prettier } = await import("prettier");
+    const config = await prettier.resolveConfig(file);
+    json = await prettier.format(JSON.stringify(sorted, null, 2), {
+      ...config,
+      filepath: file,
+    });
+  }
   await fs.writeFile(file, json);
 }
 
