@@ -1,0 +1,32 @@
+schema_version: 1
+id: fuel
+name: Fuel Ignition
+category: rollup
+status: active
+description: "FuelVM rollup settling on Ethereum. Not an EVM chain, so it has no Chainlist canonical chain entry."
+website: "https://fuel.network"
+chain_refs:
+  - caip2: eip155-1
+    relationship: settlement_chain
+addresses:
+  - submission_chain: eip155-1
+    address: "0xEA0337EFC12e98AB118948dA570C07691E8E4b37"
+    role: batcher
+    label: "Fuel Ignition blob submitter"
+    status: inactive
+    confidence: probable
+    valid_from:
+      block: 20915271
+    valid_to:
+      block: 22837253
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: analysis
+        url: "https://etherscan.io/address/0xea0337efc12e98ab118948da570c07691e8e4b37"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xfde43ec2ced0487d742d14e51565e4b444f5e1ae1a61834f8b6d2fc871b64a23"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x2f4ecbb65703c48e3d7d8ec56cb70947dc8342b52d8ebefcb7429bbef0f8874c"

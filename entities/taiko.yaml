@@ -48,6 +48,75 @@ addresses:
         submission_chain: eip155-1
         tx_hash: "0x4b9a0a5f71d3ffb44a6dab55db5f94e96f0f2a7ab61cadd442ae037f87af1c7d"
   - submission_chain: eip155-1
+    address: "0x41F2F55571f9e8e3Ba511Adc48879Bd67626A2b6"
+    role: proposer
+    label: Taiko blob proposer
+    status: inactive
+    confidence: probable
+    valid_from:
+      block: 20064284
+    valid_to:
+      block: 23112811
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: analysis
+        url: "https://etherscan.io/address/0x41f2f55571f9e8e3ba511adc48879bd67626a2b6"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x0b2a36bd548df9d87168e17751f8121cddbf59636603aa79c6dd012037eea832"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xe7e7118f7d682a89074a1b8510e78ae57bdbc0e4904ac9a8dd60f5828c1d0b8e"
+  - submission_chain: eip155-1
+    address: "0x7A853a6480F4D7dB79AE91c16c960dBbB6710d25"
+    role: proposer
+    label: Taiko blob proposer
+    status: inactive
+    confidence: probable
+    valid_from:
+      block: 22592485
+    valid_to:
+      block: 23674923
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: verified_contract
+        url: "https://etherscan.io/address/0xd5aa0e20E8a6E9b04f080cf8797410FafAA9688A"
+      - type: analysis
+        url: "https://etherscan.io/address/0x7a853a6480f4d7db79ae91c16c960dbbb6710d25"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x79cdf6a53640aca20d72f5873e8f4fd5aaa97ae73a164250d505f9f09f997e81"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x7c40232a1b310cd2fa8a13daff08b29d33ed535561ffe2b4ca27f91f3dc11b99"
+  - submission_chain: eip155-1
+    address: "0xCbeB5d484b54498d3893A0c3Eb790331962e9e9d"
+    role: proposer
+    label: Taiko blob proposer
+    status: inactive
+    confidence: probable
+    valid_from:
+      block: 23139968
+    valid_to:
+      block: 25510850
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: verified_contract
+        url: "https://etherscan.io/address/0xd5aa0e20E8a6E9b04f080cf8797410FafAA9688A"
+      - type: repository
+        url: "https://github.com/taikoxyz/taiko-mono/blob/main/packages/protocol/deployments/mainnet-contract-logs-L1.md"
+      - type: analysis
+        url: "https://etherscan.io/address/0xcbeb5d484b54498d3893a0c3eb790331962e9e9d"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x60c7a5aadf64c44dd898b7f6bfca1d73c3fdaecdae2cf6a7350b6b127218d60f"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x8064d7c4fcf9e2815f0b31c2fabe78a7e82777192577261b7f20dcb6b9207e7d"
+  - submission_chain: eip155-1
     address: "0x5F62d006C10C009ff50C878Cd6157aC861C99990"
     role: proposer
     label: Taiko blob proposer

@@ -1,0 +1,32 @@
+schema_version: 1
+id: zircuit
+name: Zircuit
+category: rollup
+status: active
+description: "OP Stack rollup with AI-assisted sequencer-level security, settling on Ethereum."
+website: "https://www.zircuit.com"
+chain_refs:
+  - caip2: eip155-48900
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-48900
+addresses:
+  - submission_chain: eip155-1
+    address: "0xAF1E4f6a47af647F87C0Ec814d8032C4a4bFF145"
+    role: batcher
+    label: "Zircuit batch submitter"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 20220868
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: analysis
+        url: "https://etherscan.io/address/0xaf1e4f6a47af647f87c0ec814d8032c4a4bff145"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x9fa6bb3b549dcf2b981748b23bf1f7571987213688042fa05c383de1446a9fd4"

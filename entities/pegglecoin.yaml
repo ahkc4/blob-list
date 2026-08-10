@@ -1,0 +1,30 @@
+schema_version: 1
+id: pegglecoin
+name: Pegglecoin
+category: rollup
+status: active
+description: "OP Stack rollup settling on Ethereum."
+website: "https://teampeggle.com"
+chain_refs:
+  - caip2: eip155-42069
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+addresses:
+  - submission_chain: eip155-1
+    address: "0x5dF930Bfa5dAA2919D8f2a954a4F346a3B2cf8C2"
+    role: batcher
+    label: "Pegglecoin batch submitter"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 23445405
+    valid_to: null
+    evidence:
+      - type: analysis
+        url: "https://etherscan.io/address/0x5df930bfa5daa2919d8f2a954a4f346a3b2cf8c2"
+      - type: repository
+        url: "https://github.com/AvarchLLC/blob_lens/blob/main/apps/api_v1/src/rollup_registry.rs"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x6d15f396b9caac64ebbe7ce0a89c013baf6db27ed199e3e26507d29c61f7bb3f"

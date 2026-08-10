@@ -1,0 +1,34 @@
+schema_version: 1
+id: bob
+name: BOB
+category: rollup
+status: active
+description: "Bitcoin-focused OP Stack rollup settling on Ethereum."
+website: "https://gobob.xyz"
+chain_refs:
+  - caip2: eip155-60808
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-60808
+addresses:
+  - submission_chain: eip155-1
+    address: "0x08F9F14fF43E112B18c96f0986F28Cb1878f1D11"
+    role: batcher
+    label: "BOB batch submitter"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 19635223
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: repository
+        url: "https://github.com/AvarchLLC/blob_lens/blob/main/apps/api_v1/src/rollup_registry.rs"
+      - type: analysis
+        url: "https://etherscan.io/address/0x08f9f14ff43e112b18c96f0986f28cb1878f1d11"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x7ab01223eb789d60301550074f5355a3912a966cd34e624f5e6bbd5bcfefefaf"

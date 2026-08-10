@@ -1,0 +1,81 @@
+schema_version: 1
+id: aztec
+name: Aztec
+category: rollup
+status: active
+description: >-
+  Privacy-focused rollup settling on Ethereum. Not an EVM chain, so it has no
+  Chainlist canonical chain entry. Blobs are posted by a permissionless
+  sequencer set, so each address below is an independent operator rather than an
+  Aztec-operated address.
+website: "https://aztec.network"
+chain_refs:
+  - caip2: eip155-1
+    relationship: settlement_chain
+addresses:
+  - submission_chain: eip155-1
+    address: "0x7342404Ef57E0c2FCf936F7afd9Fbf68E44a2fBE"
+    role: sequencer
+    label: "Aztec sequencer"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 23832568
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/AztecProtocol/aztec-packages/blob/next/docs/docs/networks.md"
+      - type: verified_contract
+        url: "https://etherscan.io/address/0x91fF8bbD8Ebb07893010D50A48A1609e5EBd8E34"
+      - type: analysis
+        url: "https://etherscan.io/address/0x7342404ef57e0c2fcf936f7afd9fbf68e44a2fbe"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xbe1097273708b6ede7c680341aa85aaa89b079ee4d690f409793abedbedd75ab"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xb9d8ef4645ae635e021027240108b098b760f2a25ad2ae7f1a2343e3982dff7c"
+  - submission_chain: eip155-1
+    address: "0xfAf2E4087F1b7e9863AdB05392522C1F1d12d4B4"
+    role: sequencer
+    label: "Aztec sequencer"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 23832569
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/AztecProtocol/aztec-packages/blob/next/docs/docs/networks.md"
+      - type: verified_contract
+        url: "https://etherscan.io/address/0x91fF8bbD8Ebb07893010D50A48A1609e5EBd8E34"
+      - type: analysis
+        url: "https://etherscan.io/address/0xfaf2e4087f1b7e9863adb05392522c1f1d12d4b4"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x47cd559e9aec85449392fa50abe880d503c0278d994e78f01f20739ab3c577de"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x63ff1632d9a6fcf1b3ccdd220554503e2afb417f0cd98247b94ad37c0c818c84"
+  - submission_chain: eip155-1
+    address: "0xBa694234a1896694A07FEe45eE4080a5Ac70d838"
+    role: sequencer
+    label: "Aztec sequencer"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 23847498
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/AztecProtocol/aztec-packages/blob/next/docs/docs/networks.md"
+      - type: verified_contract
+        url: "https://etherscan.io/address/0x91fF8bbD8Ebb07893010D50A48A1609e5EBd8E34"
+      - type: analysis
+        url: "https://etherscan.io/address/0xba694234a1896694a07fee45ee4080a5ac70d838"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x9da0c06ebcece1e6a121e4c88377e64c0458c0a8c76a87d27ed498431c4491a1"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x76a1b86ff07748cf740fd15f63b33ca01632c8ab9043111604223cb1988843a6"
