@@ -28,11 +28,12 @@ addresses:
     address: "0x11805594be0229EF08429D775AF0c55f7c4535dE"
     role: batcher
     label: Abstract blob submitter
-    status: active
+    status: inactive
     confidence: probable
     valid_from:
       block: 21044494
-    valid_to: null
+    valid_to:
+      block: 22567978
     evidence:
       - type: dashboard
         url: https://blobscan.com/tx/0x1f6a908fb32e53a5cc6e1c5ee812d9371150bbf37ef51d74a062410dcf94894b
@@ -41,15 +42,19 @@ addresses:
       - type: transaction
         submission_chain: eip155-1
         tx_hash: "0x1f6a908fb32e53a5cc6e1c5ee812d9371150bbf37ef51d74a062410dcf94894b"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x81b869a269de9de131761c0685643b27ad4cab066de9dbc10dbe28e1c01ec515"
   - submission_chain: eip155-1
     address: "0x4b2d036D2c27192549ad5A2F2D9875E1843833De"
     role: batcher
     label: Abstract blob submitter
-    status: active
+    status: inactive
     confidence: probable
     valid_from:
-      block: 25167159
-    valid_to: null
+      block: 22568197
+    valid_to:
+      block: 25302484
     evidence:
       - type: dashboard
         url: https://blobscan.com/tx/0x2963be1d21de6183a08c5200d8e99b216dbf983527dd090a0dfaf61d72b8760a
@@ -58,3 +63,31 @@ addresses:
       - type: transaction
         submission_chain: eip155-1
         tx_hash: "0x2963be1d21de6183a08c5200d8e99b216dbf983527dd090a0dfaf61d72b8760a"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xf5292549af6f36756821e8422a732774696caf463bc302d11a915ea010b21307"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x8919c3784643c6adab18b571955a0648b47cd39b1803b2c6a6c2815b51796ea8"
+  - submission_chain: eip155-1
+    address: "0x6be789605b13Edb78749824633b9933D44B582ba"
+    role: batcher
+    label: Abstract blob submitter
+    status: active
+    confidence: confirmed
+    valid_from:
+      block: 25302588
+    valid_to: null
+    evidence:
+      - type: documentation
+        url: https://docs.abs.xyz/connect-to-abstract
+      - type: dashboard
+        url: https://blobscan.com/tx/0x25915bca06890f699845ddefb7b926b670ede41d650ee9c770ee14de9a1f1291
+      - type: analysis
+        url: https://etherscan.io/address/0x6be789605b13edb78749824633b9933d44b582ba
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x25915bca06890f699845ddefb7b926b670ede41d650ee9c770ee14de9a1f1291"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x1dd22293708c330dd55d0d2a4755a2ba832f5aaa11e4bc00850d12cd6c68bee6"
