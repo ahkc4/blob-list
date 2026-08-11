@@ -12,6 +12,11 @@ website: "https://aztec.network"
 chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
+icon:
+  local:
+    source: icons/local/aztec.svg
+    license: "Aztec brand asset (trademark of Aztec Labs); wordmark logo redistributed unmodified for identification."
+    source_url: "https://aztec.network"
 addresses:
   - submission_chain: eip155-1
     address: "0x7342404Ef57E0c2FCf936F7afd9Fbf68E44a2fBE"

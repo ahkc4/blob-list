@@ -8,6 +8,11 @@ website: "https://fuel.network"
 chain_refs:
   - caip2: eip155-1
     relationship: settlement_chain
+icon:
+  local:
+    source: icons/local/fuel.svg
+    license: "Fuel brand asset (trademark of Fuel Labs); redistributed unmodified for identification."
+    source_url: "https://github.com/FuelLabs/fuel-explorer/blob/main/packages/ui/public/logo.svg"
 addresses:
   - submission_chain: eip155-1
     address: "0xEA0337EFC12e98AB118948dA570C07691E8E4b37"

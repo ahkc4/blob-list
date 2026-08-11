@@ -10,6 +10,12 @@ chain_refs:
     relationship: canonical_chain
   - caip2: eip155-1
     relationship: settlement_chain
+icon:
+  chain_ref: eip155-1088
+  local:
+    source: icons/local/metis.svg
+    license: "Metis brand asset (trademark of Metis); redistributed unmodified for identification."
+    source_url: "https://www.metis.io"
 addresses:
   - submission_chain: eip155-1
     address: "0xaE4d46bD9117Cb017C5185844699c51107cB28a9"
