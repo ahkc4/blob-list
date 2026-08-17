@@ -554,7 +554,8 @@
         "https://arb1.arbitrum.io/rpc",
         "https://arbitrum-one-rpc.publicnode.com",
         "wss://arbitrum-one-rpc.publicnode.com",
-        "https://rpcfree.com/arbitrum-rpc"
+        "https://rpcfree.com/arbitrum-rpc",
+        "https://rpc.satelink.network/rpc/arbitrum"
       ],
       "shortName": "arb1"
     },
@@ -1074,11 +1075,6 @@
           "name": "dexguru",
           "standard": "EIP3091",
           "url": "https://base.dex.guru"
-        },
-        {
-          "name": "Routescan",
-          "standard": "EIP3091",
-          "url": "https://base.superscan.network"
         }
       ],
       "faucets": [],
@@ -1099,7 +1095,8 @@
         "https://base-rpc.publicnode.com",
         "wss://base-rpc.publicnode.com",
         "https://rpcfree.com/base-rpc",
-        "https://rpc.baseazul.dev"
+        "https://rpc.baseazul.dev",
+        "https://rpc.satelink.network/rpc/base"
       ],
       "shortName": "base",
       "status": "active"
@@ -1357,10 +1354,10 @@
   },
   "schema_version": 1,
   "source": {
-    "commit": "b1846e6e25229c88435ac6ad13e1adb9c7ee7f88",
-    "fetched_at": "2026-08-09T20:30:04.498Z",
+    "commit": "0ff13b7c3f03c0c6f9dfa79cdcb31381c55cc914",
+    "fetched_at": "2026-08-17T08:04:05.894Z",
     "ref": "master",
     "repository": "ethereum-lists/chains",
-    "url": "https://github.com/ethereum-lists/chains/tree/b1846e6e25229c88435ac6ad13e1adb9c7ee7f88"
+    "url": "https://github.com/ethereum-lists/chains/tree/0ff13b7c3f03c0c6f9dfa79cdcb31381c55cc914"
   }
 }
