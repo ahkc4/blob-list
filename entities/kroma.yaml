@@ -1,0 +1,33 @@
+schema_version: 1
+id: kroma
+name: Kroma
+category: rollup
+status: active
+description: "OP Stack rollup settling on Ethereum."
+website: "https://kroma.network"
+chain_refs:
+  - caip2: eip155-255
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-255
+addresses:
+  - submission_chain: eip155-1
+    address: "0x41b8cD6791De4D8f9E0eaF7861aC506822AdcE12"
+    role: batcher
+    label: "Kroma batch submitter"
+    status: inactive
+    confidence: probable
+    valid_from:
+      block: 19731082
+    valid_to:
+      block: 22823399
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: analysis
+        url: "https://etherscan.io/address/0x41b8cd6791de4d8f9e0eaf7861ac506822adce12"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x1e504f673dcf1d1a9b1a332b02c62ab6f7b4cc73bd9cb8162b3c748e29c86b08"

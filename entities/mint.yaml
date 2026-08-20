@@ -1,0 +1,33 @@
+schema_version: 1
+id: mint
+name: Mint Blockchain
+category: rollup
+status: active
+description: "NFT-focused OP Stack rollup settling on Ethereum."
+website: "https://www.mintchain.io"
+chain_refs:
+  - caip2: eip155-185
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-185
+addresses:
+  - submission_chain: eip155-1
+    address: "0x68bdFecE01535090c8f3C27ec3b1AE97E83fA4aA"
+    role: batcher
+    label: "Mint Blockchain batch submitter"
+    status: inactive
+    confidence: probable
+    valid_from:
+      block: 19862462
+    valid_to:
+      block: 23969121
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: analysis
+        url: "https://etherscan.io/address/0x68bdfece01535090c8f3c27ec3b1ae97e83fa4aa"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xf44cc414d546f989fdd45029bdabb9684540af6e4082760289ee7014e82c24b3"

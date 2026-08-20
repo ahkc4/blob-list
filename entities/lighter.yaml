@@ -26,6 +26,31 @@ icon:
     source_url: "https://app.lighter.xyz/favicon.svg"
 addresses:
   - submission_chain: eip155-1
+    address: "0xFBC0dcd6c3518cB529bC1B585dB992A7d40005fa"
+    role: batcher
+    label: "zkLighter batch committer"
+    status: inactive
+    confidence: probable
+    valid_from:
+      block: 21646942
+    valid_to:
+      block: 24041071
+    evidence:
+      - type: analysis
+        url: "https://etherscan.io/address/0xFBC0dcd6c3518cB529bC1B585dB992A7d40005fa"
+      - type: verified_contract
+        url: "https://etherscan.io/address/0x3B4D794a66304F130a4Db8F2551B0070dfCf5ca7"
+      - type: repository
+        url: "https://github.com/growthepie/gtp-dna/blob/main/economics_da/economics_mapping.yml"
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x5b9954f76e6bbae376197d8d9ddeece1ab410231229d1932981029037552e563"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xe74a9b1321b4b2c61846acddc42f8faf928c30bf9e61a51c3033ca1c032a71b3"
+  - submission_chain: eip155-1
     address: "0x191fF0EC830F83916A427d169a234c33e48aA79f"
     role: batcher
     label: "zkLighter batch committer"

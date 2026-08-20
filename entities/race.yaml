@@ -1,0 +1,32 @@
+schema_version: 1
+id: race
+name: RACE
+category: rollup
+status: active
+description: "OP Stack rollup settling on Ethereum."
+website: "https://race.foundation"
+chain_refs:
+  - caip2: eip155-6805
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-6805
+addresses:
+  - submission_chain: eip155-1
+    address: "0x8CDa8351236199AF7532baD53D683Ddd9B275d89"
+    role: batcher
+    label: "RACE batch submitter"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 20270650
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: analysis
+        url: "https://etherscan.io/address/0x8cda8351236199af7532bad53d683ddd9b275d89"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x858ddc562ee66c183cd60e31452957ae5db357baa2de1750fbfe58582867400d"

@@ -1,0 +1,36 @@
+schema_version: 1
+id: syndicate
+name: Syndicate
+category: rollup
+status: active
+description: "Arbitrum Orbit chain settling on Ethereum."
+website: "https://syndicate.io"
+chain_refs:
+  - caip2: eip155-510
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-510
+addresses:
+  - submission_chain: eip155-1
+    address: "0x54dD1659c232DEC31386C52507982a4983D9BCb8"
+    role: batcher
+    label: "Syndicate batch poster"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 24398794
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/l2beat/l2beat/blob/main/packages/config/src/projects/syndicate/config.jsonc"
+      - type: repository
+        url: "https://github.com/AvarchLLC/blob_lens/blob/main/apps/api_v1/src/rollup_registry.rs"
+      - type: verified_contract
+        url: "https://etherscan.io/address/0x12ad349e5d72B582856290736e0f13FE5fA57Aa4"
+      - type: analysis
+        url: "https://etherscan.io/address/0x54dd1659c232dec31386c52507982a4983d9bcb8"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x3d7ca1eec40f2ecd07f07b21a12e99669b922c3099ef85a6a4730fbe7555ec9d"

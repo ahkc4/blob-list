@@ -22,6 +22,29 @@ icon:
   chain_ref: eip155-196
 addresses:
   - submission_chain: eip155-1
+    address: "0xdfd6C636Dcb5a013c2431316c4A0762B84e70a5d"
+    role: batcher
+    label: "X Layer batch submitter"
+    status: inactive
+    confidence: probable
+    valid_from:
+      block: 23646949
+    valid_to:
+      block: 24081262
+    evidence:
+      - type: analysis
+        url: "https://etherscan.io/address/0xdfd6C636Dcb5a013c2431316c4A0762B84e70a5d"
+      - type: repository
+        url: "https://github.com/growthepie/gtp-dna/blob/main/economics_da/economics_mapping.yml"
+      - type: repository
+        url: "https://github.com/l2beat/l2beat/blob/main/packages/config/src/projects/xlayer/discovered.json"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x906ff15155086d5865e065ca2e2de44d4da46512eb4f0b6b5e656d0e834b4192"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x7eb6894e240c2eb9ffc34b21b09a4800ef61c99e97ac022d231ba4c5b6021a69"
+  - submission_chain: eip155-1
     address: "0x98245d0ADF4595C66F0a9Db8E13c44CBFF6be459"
     role: batcher
     label: "X Layer batch submitter"

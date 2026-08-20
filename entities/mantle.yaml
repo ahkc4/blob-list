@@ -1,0 +1,34 @@
+schema_version: 1
+id: mantle
+name: Mantle
+category: rollup
+status: active
+description: "Modular rollup settling on Ethereum."
+website: "https://mantle.xyz"
+chain_refs:
+  - caip2: eip155-5000
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-5000
+addresses:
+  - submission_chain: eip155-1
+    address: "0x2f40D796917ffB642bD2e2bdD2C762A5e40fd749"
+    role: batcher
+    label: "Mantle batch submitter"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 24233712
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: repository
+        url: "https://github.com/AvarchLLC/blob_lens/blob/main/apps/api_v1/src/rollup_registry.rs"
+      - type: analysis
+        url: "https://etherscan.io/address/0x2f40d796917ffb642bd2e2bdd2c762a5e40fd749"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xeb72e0402aefb8ebedfa69dc27a07336433e536dcf32933c677d1b8cec5412fb"

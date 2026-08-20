@@ -1,0 +1,36 @@
+schema_version: 1
+id: metis
+name: Metis
+category: rollup
+status: active
+description: "Metis Andromeda rollup settling on Ethereum."
+website: "https://www.metis.io"
+chain_refs:
+  - caip2: eip155-1088
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-1088
+  local:
+    source: icons/local/metis.svg
+    license: "Metis brand asset (trademark of Metis); redistributed unmodified for identification."
+    source_url: "https://www.metis.io"
+addresses:
+  - submission_chain: eip155-1
+    address: "0xaE4d46bD9117Cb017C5185844699c51107cB28a9"
+    role: batcher
+    label: "Metis batch submitter"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 22482153
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: analysis
+        url: "https://etherscan.io/address/0xae4d46bd9117cb017c5185844699c51107cb28a9"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x1c28c8e7b89c5da880a52c3e4e4ca6da332816e72c0600d55c18479be897c8b7"

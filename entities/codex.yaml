@@ -1,0 +1,34 @@
+schema_version: 1
+id: codex
+name: Codex
+category: rollup
+status: active
+description: "Stablecoin-focused rollup settling on Ethereum."
+website: "https://www.codex.xyz"
+chain_refs:
+  - caip2: eip155-81224
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-81224
+addresses:
+  - submission_chain: eip155-1
+    address: "0xB5BD290ef8ef3840Cb866c7A8b7CC9E45FdE3ab9"
+    role: batcher
+    label: "Codex batch submitter"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 22074035
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: repository
+        url: "https://github.com/AvarchLLC/blob_lens/blob/main/apps/api_v1/src/rollup_registry.rs"
+      - type: analysis
+        url: "https://etherscan.io/address/0xb5bd290ef8ef3840cb866c7a8b7cc9e45fde3ab9"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x253e05d2657af4a183f7e1e5e43db0ab6646bc5425c75fc9a2109c41eee61546"

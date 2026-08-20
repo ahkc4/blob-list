@@ -1,0 +1,32 @@
+schema_version: 1
+id: lisk
+name: Lisk
+category: rollup
+status: active
+description: "OP Stack rollup settling on Ethereum."
+website: "https://lisk.com"
+chain_refs:
+  - caip2: eip155-1135
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-1135
+addresses:
+  - submission_chain: eip155-1
+    address: "0xa6Ea2f3299b63c53143c993d2d5E60A69Cd6Fe24"
+    role: batcher
+    label: "Lisk batch submitter"
+    status: active
+    confidence: probable
+    valid_from:
+      block: 19790222
+    valid_to: null
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: analysis
+        url: "https://etherscan.io/address/0xa6ea2f3299b63c53143c993d2d5e60a69cd6fe24"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0xac5821ced91d9beb2693830d30011772d48204c76cfb790ef3f0ca5bee7d6477"

@@ -1,0 +1,36 @@
+schema_version: 1
+id: river
+name: River
+category: rollup
+status: active
+description: "OP Stack rollup for the River (Towns) messaging protocol, settling on Ethereum."
+website: "https://www.river.build"
+chain_refs:
+  - caip2: eip155-550
+    relationship: canonical_chain
+  - caip2: eip155-1
+    relationship: settlement_chain
+icon:
+  chain_ref: eip155-550
+addresses:
+  - submission_chain: eip155-1
+    address: "0x52ee324F2bCD0c5363d713eb9f62D1eE47266ac1"
+    role: batcher
+    label: "River batch submitter"
+    status: inactive
+    confidence: probable
+    valid_from:
+      block: 19905443
+    valid_to:
+      block: 21867274
+    evidence:
+      - type: repository
+        url: "https://github.com/Blobscan/blobscan/blob/main/packages/rollups/src/blob-posters/mainnet.ts"
+      - type: analysis
+        url: "https://etherscan.io/address/0x52ee324f2bcd0c5363d713eb9f62d1ee47266ac1"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x8ccaad4727ea5b832730b36af3bd13bfa9b5570d658b35bd888bba23eb4f5808"
+      - type: transaction
+        submission_chain: eip155-1
+        tx_hash: "0x09d7853b9b1be34f869b43082e684518aedd94b44bf39f8f8b1625cc5a50355f"
