@@ -640,11 +640,6 @@
           "name": "blockscout",
           "standard": "EIP3091",
           "url": "https://robinhoodchain.blockscout.com"
-        },
-        {
-          "name": "HoodScan",
-          "standard": "EIP3091",
-          "url": "https://hoodscan.ai"
         }
       ],
       "faucets": [],
@@ -1354,10 +1349,10 @@
   },
   "schema_version": 1,
   "source": {
-    "commit": "0ff13b7c3f03c0c6f9dfa79cdcb31381c55cc914",
-    "fetched_at": "2026-08-17T08:04:05.894Z",
+    "commit": "3d03447f0d8ce2549fa08b793a78db78490ef371",
+    "fetched_at": "2026-08-24T08:07:50.014Z",
     "ref": "master",
     "repository": "ethereum-lists/chains",
-    "url": "https://github.com/ethereum-lists/chains/tree/0ff13b7c3f03c0c6f9dfa79cdcb31381c55cc914"
+    "url": "https://github.com/ethereum-lists/chains/tree/3d03447f0d8ce2549fa08b793a78db78490ef371"
   }
 }
