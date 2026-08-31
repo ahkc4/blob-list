@@ -636,6 +636,12 @@
       "chainId": 4663,
       "explorers": [
         {
+          "icon": "robinscan",
+          "name": "robinscan",
+          "standard": "EIP3091",
+          "url": "https://robinscan.io"
+        },
+        {
           "icon": "blockscout",
           "name": "blockscout",
           "standard": "EIP3091",
@@ -662,6 +668,8 @@
       },
       "rpc": [
         "https://rpc.mainnet.chain.robinhood.com",
+        "https://robinhood-rpc.publicnode.com",
+        "wss://robinhood-rpc.publicnode.com",
         "https://rpc.arrowrpc.com"
       ],
       "shortName": "robinhoodchain",
@@ -696,7 +704,11 @@
         "chain": "eip155-11155111",
         "type": "L2"
       },
-      "rpc": ["https://rpc.testnet.chain.robinhood.com/rpc"],
+      "rpc": [
+        "https://rpc.testnet.chain.robinhood.com/rpc",
+        "https://robinhood-sepolia-rpc.publicnode.com",
+        "wss://robinhood-sepolia-rpc.publicnode.com"
+      ],
       "shortName": "rh-testnet",
       "slip44": 1,
       "title": "Robinhood Chain Testnet"
@@ -1349,10 +1361,10 @@
   },
   "schema_version": 1,
   "source": {
-    "commit": "3d03447f0d8ce2549fa08b793a78db78490ef371",
-    "fetched_at": "2026-08-24T08:07:50.014Z",
+    "commit": "d4be57cdbe6f2503b61f8a01777a3d80862f2bd2",
+    "fetched_at": "2026-08-31T15:11:07.844Z",
     "ref": "master",
     "repository": "ethereum-lists/chains",
-    "url": "https://github.com/ethereum-lists/chains/tree/3d03447f0d8ce2549fa08b793a78db78490ef371"
+    "url": "https://github.com/ethereum-lists/chains/tree/d4be57cdbe6f2503b61f8a01777a3d80862f2bd2"
   }
 }
