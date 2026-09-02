@@ -149,6 +149,12 @@ async function validateEntitySemantics(entity, chainlist, errors) {
       );
     }
 
+    if (claim.valid_to && claim.status === "active") {
+      errors.push(
+        `${relative(entity.__file)}: ${claim.label} is status active but closes at block ${claim.valid_to.block}; a closed range is inactive or deprecated`,
+      );
+    }
+
     if (
       claim.confidence === "confirmed" &&
       !claim.evidence.some((item) => STRONG_EVIDENCE_TYPES.has(item.type))

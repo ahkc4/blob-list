@@ -32,7 +32,7 @@ addresses:
     address: "0xcF2898225ED05Be911D3709d9417e86E0b4Cfc8f"
     role: batcher
     label: "Scroll old batch committer"
-    status: active
+    status: inactive
     confidence: probable
     valid_from:
       block: 19758051

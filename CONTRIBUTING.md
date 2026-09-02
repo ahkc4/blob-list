@@ -16,6 +16,7 @@ Thanks for helping make blob attribution less hand-wavy.
 - `submission_chain` must be a known CAIP-2 ref from the pinned Chainlist snapshot lockfile.
 - `address` must be a checksummed EVM address.
 - `valid_to: null` means the claim is currently open-ended.
+- `status: active` requires `valid_to: null`. Once a range is closed the claim is `inactive` (or `deprecated`); consumers filter on `status`, so an active claim with an end block reads as a live submitter that has in fact retired.
 - The same `submission_chain + address + role` cannot map to two active, non-disputed entities over overlapping block ranges.
 
 ## Social Accounts
