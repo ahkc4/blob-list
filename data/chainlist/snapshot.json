@@ -646,6 +646,16 @@
           "name": "blockscout",
           "standard": "EIP3091",
           "url": "https://robinhoodchain.blockscout.com"
+        },
+        {
+          "name": "hoodscan",
+          "standard": "EIP3091",
+          "url": "https://hoodscan.co"
+        },
+        {
+          "name": "stonkscan",
+          "standard": "EIP3091",
+          "url": "https://stonkscan.io"
         }
       ],
       "faucets": [],
@@ -670,7 +680,8 @@
         "https://rpc.mainnet.chain.robinhood.com",
         "https://robinhood-rpc.publicnode.com",
         "wss://robinhood-rpc.publicnode.com",
-        "https://rpc.arrowrpc.com"
+        "https://rpc.arrowrpc.com",
+        "https://rpc.ordofi.network"
       ],
       "shortName": "robinhoodchain",
       "status": "active"
@@ -1361,10 +1372,10 @@
   },
   "schema_version": 1,
   "source": {
-    "commit": "d4be57cdbe6f2503b61f8a01777a3d80862f2bd2",
-    "fetched_at": "2026-08-31T15:11:07.844Z",
+    "commit": "e3e8941715dfe0cbce792822e73637f2d9cbde6e",
+    "fetched_at": "2026-09-07T13:33:36.760Z",
     "ref": "master",
     "repository": "ethereum-lists/chains",
-    "url": "https://github.com/ethereum-lists/chains/tree/d4be57cdbe6f2503b61f8a01777a3d80862f2bd2"
+    "url": "https://github.com/ethereum-lists/chains/tree/e3e8941715dfe0cbce792822e73637f2d9cbde6e"
   }
 }
